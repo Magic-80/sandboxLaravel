@@ -17,11 +17,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call(function () {
-            Mail::raw('Ceci est un email automatique envoyé à 09:55', function($message) {
+            Mail::raw('Ceci est un email automatique de sanboxLaravel', function($message) {
                 $message->to('sttjs80@gmail.com')
                         ->subject('Notification quotidienne');
             });
-        })->dailyAt('09:55');
+        })->everyMinute();
     }
 
     /**
