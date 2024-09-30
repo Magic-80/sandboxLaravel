@@ -43,7 +43,7 @@ return new class extends Migration
             $table->string('tag');
 
             $table->primary(['entry_uuid', 'tag']);
-            $table->index('tag');
+            $table->string('tag');
 
             $table->foreign('entry_uuid')
                 ->references('uuid')
